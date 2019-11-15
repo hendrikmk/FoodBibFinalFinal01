@@ -16,7 +16,7 @@ class AddNewEntry {
 
         form.querySelector('.save').addEventListener('click', () => {
             var newObj = {
-              'id': "",
+              'id': "0",
               'rezeptname': document.getElementById('rezeptname').value,
               'zutaten': document.getElementById('zutaten').value,
               'beschreibung': document.getElementById('beschreibung').value
@@ -58,7 +58,6 @@ class AddNewEntry {
       this._dataset.zutaten = $$ZUTATEN$$;
       this._dataset.beschreibung = $$BESCHREIBUNG$$;
 
-
       if (this._editIndex > -1) {
           this._app.updateDataByIndex(this._editIndex, this._dataset);
       } else {
@@ -66,7 +65,7 @@ class AddNewEntry {
       }
 
       // Zurück zur Übersicht
-      this._app.showPage("page-list");
+      this._app.showPage("overview");
   }
 }
 export default AddNewEntry;
