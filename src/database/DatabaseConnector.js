@@ -36,6 +36,12 @@ class DatabaseConnector {
         'rezeptname': 'Grießbrei',
         'zutaten': 'Milch, Weichweizengrieß, Zucker, Vanillezucker, Salz, Butter',
         'beschreibung': 'Milch und Zucker zum kochen bringen. Weichweizengrieß mit einrühren und aufkochen lassen. Butter und Salz dazugeben. FERTIG!!'
+      },
+      {
+        'id': 3,
+        'rezeptname': 'Haxe mit Kraut',
+        'zutaten': 'Haxe, Rotkraut, Knödel',
+        'beschreibung': 'Alles in der guten alten Mikki warmmachen und genießen. Fertig!'
       }
     ];
 
