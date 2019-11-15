@@ -1,0 +1,38 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "das ist ein test",
+  "main": "index.js",
+  "scripts": {
+    "clean": "node scripts/clean.js",
+    "build": "npm run clean && parcel build src/*.html --public-url . --detailed-report --experimental-scope-hoisting",
+    "watch": "npm run clean && parcel watch src/*.html --public-url . --detailed-report --experimental-scope-hoisting",
+    "start": "parcel src/index.html --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jannisschalk-dhbw/test-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jannisschalk-dhbw/test-project/issues"
+  },
+  "homepage": "https://github.com/jannisschalk-dhbw/test-project#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "navigo": "^7.1.2",
+    "parcel-bundler": "^1.12.4",
+    "shelljs": "^0.8.3",
+    "src": "^1.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
