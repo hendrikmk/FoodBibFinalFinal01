@@ -33,9 +33,9 @@ class DatabaseConnector {
       },
       {
         'id': 2,
-        'rezeptname': 'Pfannkuchen',
-        'zutaten': 'Mehl, Eier',
-        'beschreibung': 'Alles Mischen und Ausbacken'
+        'rezeptname': 'Grießbrei',
+        'zutaten': 'Milch, Weichweizengrieß, Zucker, Vanillezucker, Salz, Butter',
+        'beschreibung': 'Milch und Zucker zum kochen bringen. Weichweizengrieß mit einrühren und aufkochen lassen. Butter und Salz dazugeben. FERTIG!!'
       }
     ];
 
