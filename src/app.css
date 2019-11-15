@@ -12,24 +12,30 @@
 html, body {
     padding: 0;
     margin: 0;
+    color: green;
 }
 
 html {
     font-family: "Rubik", sans-serif;
     font-size: 10pt;
     line-height: 1.6;
+    color: green;
 }
 
 .hidden {
     display: none;
 }
 
+button{
+  color: green;
+}
+
 @media (min-width: 40em) {
     html {
         /* http://bg.siteorigin.com/ */
         background-color: #669ac4;
-        background-image: url(background.png);
-
+        background-image: url(background.jpg);
+        color: green;
         font-size: 11pt;
     }
 
@@ -38,7 +44,7 @@ html {
         margin: 0 auto;
         margin-top: 2em;
         margin-bottom: 2em;
-
+        color: green;
         border: 1px solid #202020;
         box-shadow: 1px 1px 3px rgba(0,0,0, 0.5);
 
