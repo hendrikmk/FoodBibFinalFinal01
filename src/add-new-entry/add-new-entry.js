@@ -21,6 +21,17 @@ class AddNewEntry {
               Ingredients: document.getElementById('zutaten').value,
               Instructions: document.getElementById('beschreibung').value
             };
+            const ref = firebase.storage().ref();
+            const file = $('#bild').get(0).files[0];
+            const name = file.name;
+            const metadata = { contentType: file.type };
+            const task = ref.child(name).put(file, metadata);
+task
+  .then(snapshot => snapshot.ref.getDownloadURL())
+  .then((url) => {
+    console.log(url);
+    document.querySelector('#someImageTagID').src = url;
+  })
 
             data.push(newObj);
 			var newPostRef = firebase.database().ref('Daten/').push();
