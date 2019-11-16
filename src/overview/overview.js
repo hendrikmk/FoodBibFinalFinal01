@@ -21,7 +21,10 @@ class Overview {
     _processData(data, template){
         let container = document.createElement('div');
 
-
+        // im folgenden Abschnitt werden die Daten aus der firebase
+        // in die overview-seite geschrieben. klappt nur noch nicht so ganz
+        // (aber der foreach teil scheint zu funktionieren, zumindest haben wir
+        // genauso viele Einträge auf der Website wie in der firebase)
         var database = firebase.database().ref('Daten/');
         database.on('value', function(snapshot) {
           snapshot.forEach(function(childSnapshot) {
@@ -35,6 +38,7 @@ class Overview {
           });
         });
 
+// hier der alte shit, funktioniert wenigstens. nur halt ohne premium-firebase
         // data.forEach((obj) => {
         //     let div = template.querySelector('.rezept-template').cloneNode(true);
         //     div.innerHTML = div.innerHTML.replace('$$REZEPTNAME$$', obj.rezeptname);
