@@ -19,9 +19,10 @@ class AddNewEntry {
             var newObj = {
               Name: document.getElementById('rezeptname').value,
               Ingredients: document.getElementById('zutaten').value,
-              Instructions: document.getElementById('beschreibung').value
+              Instructions: document.getElementById('beschreibung').value,
+              Like: false
             };
-            const ref = firebase.storage().ref();
+            const ref = firebase.storage().ref('images/');
             const file = $('#bild').get(0).files[0];
             const name = file.name;
             const metadata = { contentType: file.type };
