@@ -33,7 +33,7 @@ class Overview {
             div.innerHTML = div.innerHTML.replace('$$REZEPTNAME$$', childData.Name);
             div.innerHTML = div.innerHTML.replace('$$ZUTATEN$$', childData.Ingredients);
             div.innerHTML = div.innerHTML.replace('$$BESCHREIBUNG$$', childData.Instructions);
-            console.log(childData);
+//            console.log(childData); //gibt in der console vollständig alle geladenen Datensätze aus
             container.appendChild(div);
           });
         });
