@@ -20,13 +20,9 @@ class Overview {
 
     _processData(data, template){
         let container = document.createElement('div');
+
+
         var database = firebase.database().ref('Daten/');
-
-        // var userId = firebase.auth().currentUser.uid;
-        // return firebase.database().ref('/Daten/' + userId).once('value').then(function(snapshot) {
-        //   var rezeptname = (snapshot.val() && snapshot.val().rezeptname) || 'Test';
-        // });
-
         database.on('value', function(snapshot) {
           snapshot.forEach(function(childSnapshot) {
             let div = template.querySelector('.rezept-template').cloneNode(true);
@@ -34,7 +30,7 @@ class Overview {
             div.innerHTML = div.innerHTML.replace('$$REZEPTNAME$$', childData.rezeptname);
             div.innerHTML = div.innerHTML.replace('$$ZUTATEN$$', childData.zutaten);
             div.innerHTML = div.innerHTML.replace('$$BESCHREIBUNG$$', childData.beschreibung);
-            //console.log(childData);
+            console.log(childData);
             container.appendChild(div);
           });
         });
@@ -46,6 +42,7 @@ class Overview {
         //     div.innerHTML = div.innerHTML.replace('$$BESCHREIBUNG$$', obj.beschreibung);
         //     container.appendChild(div);
         // })
+
         return container;
     }
 
