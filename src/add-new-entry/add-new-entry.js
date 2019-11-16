@@ -22,21 +22,24 @@ class AddNewEntry {
               Instructions: document.getElementById('beschreibung').value,
               Like: false
             };
+            //Jetzt wird das Bild gespeichert ausm Input, und der Storage wird initialisiert
             const ref = firebase.storage().ref('images/');
             const file = $('#bild').get(0).files[0];
             const name = file.name;
             const metadata = { contentType: file.type };
             const task = ref.child(name).put(file, metadata);
+            //Jetzt wirds auf Firebase Storage geupdatet
 task
   .then(snapshot => snapshot.ref.getDownloadURL())
   .then((url) => {
     console.log(url);
     document.querySelector('#someImageTagID').src = url;
   })
-
+  //Jetzt werden die Daten auf Firebase Database gespeichert
+  var newPostRef = firebase.database().ref('Daten/').push();
+  newPostRef.set(newObj);
+  //Das ist noch der Shit für den Localstorage
             data.push(newObj);
-			var newPostRef = firebase.database().ref('Daten/').push();
-			newPostRef.set(newObj);
             console.log(data);
             this.db.write(this.db.defaultKey(), data);
             this.app._router.navigate('overview');

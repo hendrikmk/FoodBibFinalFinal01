@@ -56,3 +56,8 @@
     background-color: #f0f0f0;
     cursor: pointer;
 }
+div{
+  outline-style: solid;
+  outline-color: red;
+  outline-width: thin;
+}
