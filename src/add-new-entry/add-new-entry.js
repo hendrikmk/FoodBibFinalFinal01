@@ -14,14 +14,17 @@ class AddNewEntry {
         let form = await this._importNewEntryForm();
         let data = this._loadData();
 
+
         form.querySelector('.save').addEventListener('click', () => {
             var newObj = {
-              'id': "0",
-              'rezeptname': document.getElementById('rezeptname').value,
-              'zutaten': document.getElementById('zutaten').value,
-              'beschreibung': document.getElementById('beschreibung').value
+              Name: document.getElementById('rezeptname').value,
+              Ingredients: document.getElementById('zutaten').value,
+              Instructions: document.getElementById('beschreibung').value
             };
+
             data.push(newObj);
+			var newPostRef = firebase.database().ref('Daten/').push();
+			newPostRef.set(newObj);
             console.log(data);
             this.db.write(this.db.defaultKey(), data);
             this.app._router.navigate('overview');
@@ -29,6 +32,7 @@ class AddNewEntry {
 
         return this._createContentObject(form);
     }
+
 
     async _importNewEntryForm() {
         const template = await import('./add-new-entry.html');
