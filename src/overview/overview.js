@@ -22,9 +22,9 @@ class Overview {
         let container = document.createElement('div');
 
 // im folgenden Abschnitt werden die Daten aus der firebase
-// in die overview-seite geschrieben. klappt nur noch nicht so ganz
-// (aber der foreach teil scheint zu funktionieren, zumindest haben wir
-// genauso viele Einträge auf der Website wie in der firebase)
+// in die overview-seite geschrieben. irgendwie muss man aber erst einmal auf
+// die seite klicken, damit das ding auch geladen wird. das alte zeug (unten)
+// war immer direkt da
         var database = firebase.database().ref('Daten/');
         database.on('value', function(snapshot) {
           snapshot.forEach(function(childSnapshot) {
