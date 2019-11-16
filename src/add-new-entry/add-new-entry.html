@@ -1,12 +1,19 @@
 <section>
   <div class="form">
     <input id="rezeptname" type="text" name="rezeptname" placeholder="Rezeptname"><br>
-    <input id="zutaten" type="text" name="zutaten" placeholder="Zutaten"><br>
-    <input id="beschreibung" type="text" name="beschreibung" placeholder="Beschreibung"><br>
+    <textarea id="zutaten" type="text" name="zutaten" cols="22" rows="5">
+1. Zutat
+2. Zutat
+3. Zutat
+...
+</textarea><br>
+    <!-- <input id="zutaten" type="text" name="zutaten" placeholder="Zutaten"><br> -->
+    <textarea id="beschreibung" type="text" name="beschreibung" cols="30" rows="5">Durchführung</textarea><br>
+    <!-- <input id="beschreibung" type="text" name="beschreibung" placeholder="Durchführung"><br> -->
     <div>
-    <input id="bild" type="file" name="pic" accept="image/*"><br>
+      <input id="bild" type="file" name="pic" accept="image/*"><br>
     </div>
-<!--<input type="submit"> -->
+    <!--<input type="submit"> -->
     <button class="save btn btn-primary">Speichern</button>
-    </div>
+  </div>
 </section>
