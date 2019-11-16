@@ -20,13 +20,32 @@ class Overview {
 
     _processData(data, template){
         let container = document.createElement('div');
-        data.forEach((obj) => {
+        var database = firebase.database().ref('Daten/');
+
+        // var userId = firebase.auth().currentUser.uid;
+        // return firebase.database().ref('/Daten/' + userId).once('value').then(function(snapshot) {
+        //   var rezeptname = (snapshot.val() && snapshot.val().rezeptname) || 'Test';
+        // });
+
+        database.on('value', function(snapshot) {
+          snapshot.forEach(function(childSnapshot) {
             let div = template.querySelector('.rezept-template').cloneNode(true);
-            div.innerHTML = div.innerHTML.replace('$$REZEPTNAME$$', obj.rezeptname);
-            div.innerHTML = div.innerHTML.replace('$$ZUTATEN$$', obj.zutaten);
-            div.innerHTML = div.innerHTML.replace('$$BESCHREIBUNG$$', obj.beschreibung);
+            var childData = childSnapshot.val();
+            div.innerHTML = div.innerHTML.replace('$$REZEPTNAME$$', childData.rezeptname);
+            div.innerHTML = div.innerHTML.replace('$$ZUTATEN$$', childData.zutaten);
+            div.innerHTML = div.innerHTML.replace('$$BESCHREIBUNG$$', childData.beschreibung);
+            //console.log(childData);
             container.appendChild(div);
-        })
+          });
+        });
+
+        // data.forEach((obj) => {
+        //     let div = template.querySelector('.rezept-template').cloneNode(true);
+        //     div.innerHTML = div.innerHTML.replace('$$REZEPTNAME$$', obj.rezeptname);
+        //     div.innerHTML = div.innerHTML.replace('$$ZUTATEN$$', obj.zutaten);
+        //     div.innerHTML = div.innerHTML.replace('$$BESCHREIBUNG$$', obj.beschreibung);
+        //     container.appendChild(div);
+        // })
         return container;
     }
 
