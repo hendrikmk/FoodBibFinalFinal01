@@ -27,7 +27,7 @@ class Overview {
             let div = template.querySelector('.rezept-template').cloneNode(true);
             var childData = childSnapshot.val();
             let dieid = childSnapshot.key;  //key des datensatzes zum button registrieren
-        console.log(dieid);
+        // console.log(dieid);
             var datavonbestimmtem = firebase.database().ref('Daten/'+ dieid);  //datenbank referenz zum datensatz
             div.innerHTML = div.innerHTML.replace('$$REZEPTNAME$$', childData.Name);
             div.innerHTML = div.innerHTML.replace('$$ZUTATEN$$', childData.Ingredients);
