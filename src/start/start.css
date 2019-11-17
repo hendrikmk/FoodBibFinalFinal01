@@ -5,3 +5,9 @@ h1{
 .load-adresses btn btn-primary{
   background-color: green;
 }
+
+
+.headline{
+  text-align: center;
+}
+div{margin: 10px;}
