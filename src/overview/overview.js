@@ -60,9 +60,18 @@ class Overview {
           hilfslike = "false";
           console.log("unliked");
         }
-
       };
-      div.appendChild(butten)
+      div.appendChild(butten);
+    var buttenloeschen = document.createElement("input"); // button wird registriert
+    buttenloeschen.type = "button";
+      buttenloeschen.value = "Delete";
+      buttenloeschen.name = "loschen";
+      buttenloeschen.onclick = function(){
+        datavonbestimmtem.remove();
+        buttenloeschen.style.visibility = 'hidden';
+        location.reload();
+      }
+        div.appendChild(buttenloeschen);
             // console.log(childData); //gibt in der console vollständig alle geladenen Datensätze aus
             container.appendChild(div);
           });
