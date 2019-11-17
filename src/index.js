@@ -13,7 +13,7 @@ window.addEventListener("load", () => {
     let app = new App();
     var database = firebase.database();
     var storage = firebase.storage();
-    let db = new DatabaseConnector();
+//    let db = new DatabaseConnector();
     if(!db.isDataObjectAlreadyPersisted()){
         db.initMyDatabase();
     }
