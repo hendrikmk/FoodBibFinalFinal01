@@ -15,3 +15,12 @@ a {
   background-color: #078503;
   border-color: #078503
 }
+.navbar-brand {
+  display: inline-block;
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
+  margin-right: 1rem;
+  font-size: 2rem;
+  line-height: inherit;
+  white-space: nowrap
+}
