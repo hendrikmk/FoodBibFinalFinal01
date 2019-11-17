@@ -10,9 +10,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 header{
   color: black;
+  background-color: #048f3c;
 }
 nav{
-  color:green;
+  color:#048f3c;
 }
 html, body {
     margin: 0;
@@ -32,6 +33,7 @@ body {
 }
 nav{
   color: black;
+  font-size: 1.4rem;
 }
 #rezeptname{
   color: black;
