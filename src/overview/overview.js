@@ -63,7 +63,7 @@ class Overview {
 
       };
       div.appendChild(butten)
-            console.log(childData); //gibt in der console vollständig alle geladenen Datensätze aus
+            // console.log(childData); //gibt in der console vollständig alle geladenen Datensätze aus
             container.appendChild(div);
           });
         });
