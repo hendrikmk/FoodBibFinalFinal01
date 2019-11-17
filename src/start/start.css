@@ -5,6 +5,11 @@ h1{
 .load-adresses btn btn-primary{
   background-color: green;
 }
+section{
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
 
 
 .headline{

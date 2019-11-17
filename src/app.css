@@ -21,6 +21,12 @@ html {
     line-height: 1.6;
     color: black;
 }
+section{
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  margin-top: 5px;
+}
 
 .hidden {
     display: none;
