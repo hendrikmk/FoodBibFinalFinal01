@@ -8,7 +8,9 @@
  * anderen importiert werden.
  */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-
+header{
+  color: black;
+}
 nav{
   color:green;
 }
@@ -21,7 +23,7 @@ html, body {
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 12pt;
-
+    color:black;
     background-color: #b9d3b6;
 }
 
@@ -29,5 +31,15 @@ body {
     display: none;
 }
 nav{
-  color: green;
+  color: black;
+}
+#rezeptname{
+  color: black;
+}
+
+#beschreibung{
+  color:black;
+}
+#zutaten{
+  color:black;
 }
