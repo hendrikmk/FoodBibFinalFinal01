@@ -33,7 +33,7 @@ task
     Name: document.getElementById('rezeptname').value,
     Ingredients: document.getElementById('zutaten').value,
     Instructions: document.getElementById('beschreibung').value,
-    Like: false,
+    Like: "false",
     ImageURL: this.fileURL
   };
   var newPostRef = firebase.database().ref('Daten/').push();
