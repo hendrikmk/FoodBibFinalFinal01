@@ -17,7 +17,7 @@ class AddNewEntry {
             //Jetzt wird das Bild gespeichert ausm Input, und der Storage wird initialisiert
             const ref = firebase.storage().ref('images/');
             const file = $('#bild').get(0).files[0];
-            const name = file.name;
+            const name = this._uuidv4();
             const metadata = { contentType: file.type };
             const task = ref.child(name).put(file, metadata);
             //Jetzt wirds auf Firebase Storage geupdatet
@@ -34,7 +34,8 @@ task
     Ingredients: document.getElementById('zutaten').value,
     Instructions: document.getElementById('beschreibung').value,
     Like: "false",
-    ImageURL: this.fileURL
+    ImageURL: this.fileURL,
+    ImageID: name
   };
   var newPostRef = firebase.database().ref('Daten/').push();
   newPostRef.set(newObj);
@@ -61,6 +62,10 @@ task
       };
       return content;
   }
+  _uuidv4() {
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+  )}
 
     get title() {
         return "Neuer Eintrag";

@@ -19,8 +19,8 @@ class Overview {
 
 // im folgenden Abschnitt werden die Daten aus der firebase
 // in die overview-seite geschrieben. irgendwie muss man aber erst einmal auf
-// die seite klicken, damit das ding auch geladen wird. das alte zeug (unten)
-// war immer direkt da
+// die seite klicken, damit das ding auch geladen wird.
+
         var database = firebase.database().ref('Daten/');
         database.on('value', function(snapshot) {
           snapshot.forEach(function(childSnapshot) {
@@ -70,21 +70,22 @@ class Overview {
         datavonbestimmtem.remove();
         buttenloeschen.style.visibility = 'hidden';
         location.reload();
+        // Create a reference to the file to delete
+        var desertRef = firebase.storage().ref.child('images/').child(childData.ImageID);
+
+        // Delete the file
+        desertRef.delete().then(function() {
+          // File deleted successfully
+          alert("ey jo!");
+        }).catch(function(error) {
+          // Uh-oh, an error occurred!
+        });
       }
         div.appendChild(buttenloeschen);
             // console.log(childData); //gibt in der console vollständig alle geladenen Datensätze aus
             container.appendChild(div);
           });
         });
-
-// hier der alte shit, funktioniert wenigstens. nur halt ohne premium-firebase
-        // data.forEach((obj) => {
-        //     let div = template.querySelector('.rezept-template').cloneNode(true);
-        //     div.innerHTML = div.innerHTML.replace('$$REZEPTNAME$$', obj.rezeptname);
-        //     div.innerHTML = div.innerHTML.replace('$$ZUTATEN$$', obj.zutaten);
-        //     div.innerHTML = div.innerHTML.replace('$$BESCHREIBUNG$$', obj.beschreibung);
-        //     container.appendChild(div);
-        // })
 
         return container;
     }
