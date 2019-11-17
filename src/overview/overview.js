@@ -43,18 +43,25 @@ class Overview {
                   img.style.width = '200px';
                   div.appendChild(img);
 
+                  let hilfslike = childData.Like;
                   var butten = document.createElement("input"); // button wird registriert
       butten.type = "button";
-      butten.value = "Like";
+      if (hilfslike == "true"){
+        butten.value = "Unlike";
+      } else {
+        butten.value = "Like";
+      }
       butten.name = "Likee";
       butten.onclick = function() { // Note this is a function
-        if (childData.Like == false){
+        if (hilfslike == "false"){
                   datavonbestimmtem.update({ Like: "true" });
                   butten.value = "Unlike";
+                  hilfslike = true;
                   console.log("geliket");
         } else {
           datavonbestimmtem.update({ Like: "false" });
           butten.value = "Like";
+          hilfslike = false;
           console.log("unliked");
         }
 
