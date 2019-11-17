@@ -52,12 +52,12 @@ class Overview {
         if (hilfslike == "false"){
                   datavonbestimmtem.update({ Like: "true" });
                   butten.value = "Unlike";
-                  hilfslike = true;
+                  hilfslike = "true";
                   console.log("geliket");
-        } else {
+        } else if (hilfslike =="true"){
           datavonbestimmtem.update({ Like: "false" });
           butten.value = "Like";
-          hilfslike = false;
+          hilfslike = "false";
           console.log("unliked");
         }
 
