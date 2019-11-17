@@ -30,11 +30,37 @@ class Overview {
           snapshot.forEach(function(childSnapshot) {
             let div = template.querySelector('.rezept-template').cloneNode(true);
             var childData = childSnapshot.val();
+            let dieid = childSnapshot.key;  //key des datensatzes zum button registrieren
+        console.log(dieid);
+            var datavonbestimmtem = firebase.database().ref('Daten/'+ dieid);  //datenbank referenz zum datensatz
             div.innerHTML = div.innerHTML.replace('$$REZEPTNAME$$', childData.Name);
             div.innerHTML = div.innerHTML.replace('$$ZUTATEN$$', childData.Ingredients);
             div.innerHTML = div.innerHTML.replace('$$BESCHREIBUNG$$', childData.Instructions);
-            //div.innerHTML = div.innerHTML.replace('myImg', childData.ImageURL);
-//            console.log(childData); //gibt in der console vollständig alle geladenen Datensätze aus
+      //      div.innerHTML = div.innerHTML.replace('myImg', childData.ImageURL);
+            var img = document.createElement('img');  //img wird erzeugt mit imageURL, danach angehängt an div
+                  img.src =  childData.ImageURL;
+                  img.style.height = '200px';
+                  img.style.width = '200px';
+                  div.appendChild(img);
+
+                  var butten = document.createElement("input"); // button wird registriert
+      butten.type = "button";
+      butten.value = "Like";
+      butten.name = "Likee";
+      butten.onclick = function() { // Note this is a function
+        if (childData.Like == false){
+                  datavonbestimmtem.update({ Like: "true" });
+                  butten.value = "Unlike";
+                  console.log("geliket");
+        } else {
+          datavonbestimmtem.update({ Like: "false" });
+          butten.value = "Like";
+          console.log("unliked");
+        }
+
+      };
+      div.appendChild(butten)
+            console.log(childData); //gibt in der console vollständig alle geladenen Datensätze aus
             container.appendChild(div);
           });
         });
