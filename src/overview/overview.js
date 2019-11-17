@@ -1,24 +1,20 @@
 "use strict";
 
 import "./overview.css";
-import DatabaseConnector from '../database/DatabaseConnector';
 
 class Overview {
 
     constructor(app){
         this.app = app;
-        this.db = new DatabaseConnector();
-        this.db.initMyDatabase();
     }
 
     async onShow() {
         let adressTemplate = await this._importAdressTemplate();
-        let data = this._loadData();
-        let htmlToRender = this._processData(data, adressTemplate);
+        let htmlToRender = this._processData(adressTemplate);
         return this._createContentObject(htmlToRender);
     }
 
-    _processData(data, template){
+    _processData(template){
         let container = document.createElement('div');
 
 // im folgenden Abschnitt werden die Daten aus der firebase
@@ -92,9 +88,6 @@ class Overview {
         return container;
     }
 
-    _loadData(){
-        return this.db.read(this.db.defaultKey());
-    }
 
     _createContentObject(html) {
         let content = {

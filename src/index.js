@@ -4,7 +4,6 @@ import "babel-core/register";
 import "babel-polyfill";
 import App from "./app.js";
 import "./index.css";
-import DatabaseConnector from './database/DatabaseConnector';
 
 
 // Erst loslaufen, wenn das Document Object Modul bereit ist

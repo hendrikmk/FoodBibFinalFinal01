@@ -1,6 +1,5 @@
 "use strict";
 
-import DatabaseConnector from '../database/DatabaseConnector';
 import "./add-new-entry.css";
 
 class AddNewEntry {
