@@ -38,7 +38,7 @@ task
   };
   var newPostRef = firebase.database().ref('Daten/').push();
   newPostRef.set(newObj);
-            console.log(data);
+            // console.log(data);
             this.app._router.navigate('overview');
         });
 
