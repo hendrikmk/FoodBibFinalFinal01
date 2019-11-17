@@ -1,0 +1,26 @@
+a {
+  color: #000000;
+  text-decoration: none;
+  background-color: transparent
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #065903;
+  border-color: #065903;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #078503;
+  border-color: #078503
+}
+.navbar-brand {
+  display: inline-block;
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
+  margin-right: 1rem;
+  font-size: 2rem;
+  line-height: inherit;
+  white-space: nowrap
+}
