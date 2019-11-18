@@ -67,8 +67,8 @@ class Overview {
       buttenloeschen.value = "Delete";
       buttenloeschen.name = "loschen";
       buttenloeschen.onclick = function(){
-        datavonbestimmtem.remove();
-        buttenloeschen.style.visibility = 'hidden';
+  //      datavonbestimmtem.remove();
+  //      buttenloeschen.style.visibility = 'hidden';
         location.reload();
         // Create a reference to the file to delete
         var desertRef = firebase.storage().ref.child('images/').child(childData.ImageID);
